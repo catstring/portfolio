@@ -23,7 +23,7 @@ function App() {
   React.useEffect(() => {
     const timer = setTimeout(() => {
       setShowBounce(false);
-    }, 4000);
+    }, 2000);
     return () => clearTimeout(timer);
   }, []);
 
