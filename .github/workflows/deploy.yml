@@ -1,0 +1,45 @@
+name: Deploy Vite Vue to AWS EC2
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Set up SSH
+      uses: webfactory/ssh-agent@v0.5.3
+      with:
+        ssh-private-key: ${{ secrets.EC2_NEWKEY }}
+
+    - name: do all
+      run: |
+        ssh -o StrictHostKeyChecking=no ec2-user@13.210.154.160 << EOF
+            PROJECT_DIR="/var/www"
+            PROJECT_NAME="portfolio"
+            REPO_URL="https://github.com/catstring/portfolio.git"
+            
+            sudo chown -R ec2-user:ec2-user \${PROJECT_DIR}
+            cd \${PROJECT_DIR}
+            
+            # Check if the directory exists
+            if [ ! -d "\${PROJECT_NAME}" ]; then
+              # Directory does not exist, clone the repository
+              sudo git clone \${REPO_URL}
+              sudo chown -R ec2-user:ec2-user \${PROJECT_NAME}
+              cd \${PROJECT_NAME}
+            else
+              # Directory exists, pull the latest changes
+              cd \${PROJECT_NAME}
+              sudo git pull
+            fi
+            
+            npm install
+            npm run build
+
+            sudo chown -R nginx:nginx \${PROJECT_DIR}
+        EOF
+
