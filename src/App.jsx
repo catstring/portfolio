@@ -1,15 +1,16 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import Profile from './components/Profile';
 import Skill from './components/Skill';
 import Project from './components/Project';
 import Hobby from './components/Hobby';
 import '@fortawesome/fontawesome-free/css/all.min.css';
-
+import './App.css'; // Make sure to import your CSS file where the keyframes are defined
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
   const [language, setLanguage] = useState('en');
- 
+  const [showBounce, setShowBounce] = useState(true); // State to control bounce effect
+
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
   };
@@ -18,13 +19,20 @@ function App() {
     setLanguage(language === 'en' ? 'zh' : 'en');
   };
 
+  // Remove bounce effect after 5 seconds
+  React.useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowBounce(false);
+    }, 4000);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
-    <div className={darkMode ? 'dark' : ''}>
-      <div className="min-h-screen bg-gray-100 dark:bg-gray-900">
+    <div className={`${darkMode ? 'dark' : ''}`}>
+      <div className={`min-h-screen bg-gray-100 dark:bg-gray-900 ${showBounce ? 'bounce' : ''}`}>
         <div className="p-5 max-w-2xl mx-auto">
           <div className="flex justify-between mb-4">
-            
-          <button
+            <button
               onClick={toggleLanguage}
               className="w-24 p-2 text-gray-800 bg-gray-200 rounded dark:bg-gray-600 dark:text-gray-200 flex items-center justify-center"
             >
@@ -42,7 +50,6 @@ function App() {
               )}
               {darkMode ? 'Light' : 'Dark'}
             </button>
-
           </div>
           <div className="text-black dark:text-white">
             <Profile language={language} />
