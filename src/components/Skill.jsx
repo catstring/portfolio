@@ -15,7 +15,7 @@ export default function Skill({ language }) {
             items: ['Laravel', 'Django'],
           },
           {
-            category: 'Front-end',
+            category: 'Frontend',
             items: ['Vue.js', 'React.js'],
           },
           {
