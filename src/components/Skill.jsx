@@ -52,7 +52,7 @@ export default function Skill({ language }) {
             items: ['Bootstrap', 'Tailwind'],
           },
           {
-            category: '數據庫',
+            category: '資料庫',
             items: ['SQL', 'MongoDB'],
           },
           {
