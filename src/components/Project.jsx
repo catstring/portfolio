@@ -1,13 +1,19 @@
 /* eslint-disable react/prop-types */
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 export default function Project({ language }) {
+  const [expandedProject, setExpandedProject] = useState(null);
+
   const commonProjects = [
-    { 
-      name: 'Project 1', 
-      tech: ['Laravel, MySQL, Bootstrap, AWS'], 
+    {
+      name: 'Project 1',
+      tech: ['Laravel, MySQL, Bootstrap, GitHub Actions, AWS'],
+      description: {
+        en: 'Project 1 description',
+        zh: '專案1簡介',
+      },
       images: [
-        '/projects/echo/1.png', 
+        '/projects/echo/1.png',
         '/projects/echo/2.png',
         '/projects/echo/8.png',
         '/projects/echo/4.png',
@@ -15,16 +21,16 @@ export default function Project({ language }) {
         '/projects/echo/6.png',
       ],
       link: 'https://echo.pfolio1.xyz/',
-      description: {
-        en: 'Project 1 description',
-        zh: '專案1簡介',
-      }
     },
-    { 
-      name: 'Project 2', 
-      tech: ['Laravel, MySQL, Vue.js, Bootstrap, AWS'], 
+    {
+      name: 'Project 2',
+      tech: ['Laravel, MySQL, Vue.js, Bootstrap, GitHub Actions, AWS'],
+      description: {
+        en: 'Project 2 description',
+        zh: '專案2簡介',
+      },
       images: [
-        '/projects/toddoList/1.png', 
+        '/projects/toddoList/1.png',
         '/projects/toddoList/2.png',
         '/projects/toddoList/3.png',
         '/projects/toddoList/4.png',
@@ -32,10 +38,6 @@ export default function Project({ language }) {
         '/projects/toddoList/6.png'
       ],
       link: 'https://toddolist.pfolio1.xyz/',
-      description: {
-        en: 'Project 2 description',
-        zh: '專案2簡介',
-      }
     },
   ];
 
@@ -66,39 +68,66 @@ export default function Project({ language }) {
         }
       });
     }, 3000);
-  
+
     return () => clearInterval(interval);
   }, []);
+
+  const handleExpand = (index) => {
+    setExpandedProject(expandedProject === index ? null : index);
+  };
 
   return (
     <div className="p-5">
       <h1 className="text-3xl font-bold mb-6">{content[language].title}</h1>
       <div className="grid grid-cols-1 gap-4">
         {content[language].projects.map((project, index) => (
-          <a
-            key={index}
-            href={project.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="relative pb-[56.25%] text-black dark:text-white block group transform transition-transform duration-300 hover:scale-105"
-          >
-            <div className="absolute inset-0 project-images">
-              {project.images.map((image, imgIndex) => (
-                <img
-                  key={imgIndex}
-                  src={image}
-                  alt=""
-                  className="absolute inset-0 w-full h-full object-cover rounded-lg fade-animation"
-                />
-              ))}
-            </div>
-            <div className="absolute inset-0 flex items-center justify-center p-5 rounded-lg bg-gray-800 hover:opacity-90 opacity-0 hover:opacity-100 transition-opacity duration-300">
-              <div className="text-center">
-                <h2 className="text-2xl font-bold text-white">{project.tech.join(', ')}</h2>
-                <p className="text-white mt-2">{project.description}</p>
+          <div key={index} className={`relative ${expandedProject === index ? 'z-50' : ''}`}>
+            <a
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={(e) => {
+                e.preventDefault();
+                handleExpand(index);
+              }}
+              className="relative pb-[56.25%] text-black dark:text-white block group transform transition-transform duration-300 hover:scale-105"
+            >
+              <div className="absolute inset-0 project-images">
+                {project.images.map((image, imgIndex) => (
+                  <img
+                    key={imgIndex}
+                    src={image}
+                    alt=""
+                    className="absolute inset-0 w-full h-full object-cover rounded-lg fade-animation"
+                  />
+                ))}
               </div>
-            </div>
-          </a>
+            </a>
+            {expandedProject === index && (
+              <div className="fixed inset-0 flex items-center justify-center z-50">
+                <div className="relative w-4/5 h-4/5 bg-white dark:bg-gray-900 p-5 rounded-lg shadow-lg overflow-y-auto transition-all duration-300 ease-in-out">
+                  <button
+                    onClick={() => setExpandedProject(null)}
+                    className="absolute top-2 right-2 bg-red-500 text-white px-2 py-1 rounded"
+                  >
+                    Close
+                  </button>
+                  <h2 className="text-2xl font-bold mb-4">{project.name}</h2>
+                  <p className="mb-4">{project.description}</p>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    {project.images.map((image, imgIndex) => (
+                      <img
+                        key={imgIndex}
+                        // src={image}
+                        alt=""
+                        className="w-full h-auto rounded-lg"
+                      />
+                    ))}
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
         ))}
       </div>
     </div>

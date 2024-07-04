@@ -55,3 +55,12 @@
     }
   }
 
+  .fixed-top {
+    position: fixed;
+    top: 10px; /* Adjust the value as needed */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    display: flex;
+    gap: 10px;
+  }
