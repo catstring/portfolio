@@ -28,7 +28,7 @@ export default function Skill({ language }) {
           },
           {
             category: 'DevOps',
-            items: ['GitHub', 'CI/CD', 'Docker', 'AWS', 'GCP'],
+            items: ['GitHub', 'CI/CD', 'Docker', 'AWS/ GCP'],
           },
         ],
       },
@@ -57,7 +57,7 @@ export default function Skill({ language }) {
           },
           {
             category: 'DevOps',
-            items: ['GitHub', 'CI/CD', 'Docker', 'AWS', 'GCP'],
+            items: ['GitHub', 'CI/CD', 'Docker', 'AWS/ GCP'],
           },
         ],
       }
@@ -72,8 +72,8 @@ export default function Skill({ language }) {
               key={index}
               className="p-5 bg-white dark:bg-gray-700 text-black dark:text-white rounded-lg shadow-md transform transition-transform duration-300 hover:scale-105"
             >
-              <h2 className="text-2xl font-semibold mb-2">{skill.category}</h2>
-              <ul className="list-disc pl-5">
+              <h2 className="font-semibold mb-2">{skill.category}</h2>
+              <ul className="text-sm list-disc pl-5">
                 {skill.items.map((item, idx) => (
                   <li key={idx} className="mb-1">{item}</li>
                 ))}

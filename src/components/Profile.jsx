@@ -10,7 +10,7 @@ export default function Profile({ language }) {
         <span className="block text-transparent bg-clip-text bg-gradient-to-r from-green-400 via-blue-500 to-purple-600 font-bold text-6xl p-5 mb-5">
             Todd Tsai
         </span> 
-            I'm a backend web developer based in Taiwan. My goal is to become a versatile and efficient software engineer. ready to provide valuable assistance in various areas of development. If you're looking to hire a junior developer, please get in touch!
+            I'm a backend web developer based in Taiwan. My goal is to become a versatile and efficient software engineer, and provide valuable assistance in various areas of development. If you're looking to hire a junior developer, please get in touch!
         </>
       ),
       contact: 'Contact',

@@ -36,3 +36,12 @@
   .bounce {
     animation: bounce 2s infinite;
   }
+
+  .project-images img {
+    animation: fade 6s infinite;
+  }
+  
+  @keyframes fade {
+    0%, 100% { opacity: 0; }
+    15%, 50% { opacity: 1; }
+  }
