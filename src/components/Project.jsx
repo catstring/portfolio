@@ -77,11 +77,11 @@ export default function Project({ language }) {
   };
 
   return (
-    <div className="p-5">
-      <h1 className="text-3xl font-bold mb-6">{content[language].title}</h1>
-      <div className="grid grid-cols-1 gap-4">
+    <div className={`p-5 ${expandedProject !== null ? 'overflow-hidden' : ''} transition-all`}>
+      <h1 className="text-3xl font-bold mb-6 transition-all">{content[language].title}</h1>
+      <div className="grid grid-cols-1 gap-4 transition-all">
         {content[language].projects.map((project, index) => (
-          <div key={index} className={`relative ${expandedProject === index ? 'z-50' : ''}`}>
+          <div key={index} className={`relative ${expandedProject === index ? 'z-50' : ''} transition-all`}>
             <a
               href={project.link}
               target="_blank"
@@ -90,7 +90,7 @@ export default function Project({ language }) {
                 e.preventDefault();
                 handleExpand(index);
               }}
-              className="relative pb-[56.25%] text-black dark:text-white block group transform transition-transform duration-300 hover:scale-105"
+              className="relative pb-[56.25%] text-black dark:text-white block group transform transition-transform duration-300 hover:scale-105 transition-all"
             >
               <div className="absolute inset-0 project-images">
                 {project.images.map((image, imgIndex) => (
@@ -98,34 +98,37 @@ export default function Project({ language }) {
                     key={imgIndex}
                     src={image}
                     alt=""
-                    className="absolute inset-0 w-full h-full object-cover rounded-lg fade-animation"
+                    className="absolute inset-0 w-full h-full object-cover rounded-lg fade-animation transition-all"
                   />
                 ))}
               </div>
             </a>
             {expandedProject === index && (
-              <div className="fixed inset-0 flex items-center justify-center z-50">
-                <div className="relative w-4/5 h-4/5 bg-white dark:bg-gray-700 p-5 rounded-lg shadow-lg overflow-y-auto transition-all duration-300 ease-in-out">
-                  <button
-                    onClick={() => setExpandedProject(null)}
-                    className="absolute top-2 right-2 bg-red-500 text-white px-2 py-1 rounded"
-                  >
-                    Close
-                  </button>
-                  <h2 className="text-2xl font-bold mb-4">{project.name}</h2>
-                  <p className="mb-4">{project.description}</p>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    {project.images.map((image, imgIndex) => (
-                      <img
-                        key={imgIndex}
-                        // src={image}
-                        alt=""
-                        className="w-full h-auto rounded-lg"
-                      />
-                    ))}
+              <>
+                <div className="fixed inset-0 bg-black bg-opacity-50 z-40 transition-all"></div>
+                <div className="fixed inset-0 flex items-center justify-center z-50 transition-all">
+                  <div className="relative w-4/5 h-4/5 bg-white dark:bg-gray-700 p-5 rounded-lg shadow-lg overflow-y-auto transition-all duration-300 ease-in-out">
+                    <button
+                      onClick={() => setExpandedProject(null)}
+                      className="absolute top-2 right-2 bg-red-500 text-white px-2 py-1 rounded transition-all"
+                    >
+                      Close
+                    </button>
+                    <h2 className="text-2xl font-bold mb-4 transition-all">{project.name}</h2>
+                    <p className="mb-4 transition-all">{project.description}</p>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 transition-all">
+                      {project.images.map((image, imgIndex) => (
+                        <img
+                          key={imgIndex}
+                          // src={image}
+                          alt=""
+                          className="w-full h-auto rounded-lg transition-all"
+                        />
+                      ))}
+                    </div>
                   </div>
                 </div>
-              </div>
+              </>
             )}
           </div>
         ))}

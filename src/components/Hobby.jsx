@@ -2,19 +2,35 @@
 
 export default function Hobby({ language }) {
   const commonHobbies = [
-    { name: 'Hobby 1', type: 'video', src: 'hobbies/filming_editing.mp4' },
-    { name: 'Hobby 2', type: 'video', src: 'hobbies/snowboarding.mp4' },
-    { name: 'Hobby 3', type: 'video', src: 'hobbies/solo_travel.mp4' },
-    { name: 'Hobby 4', type: 'video', src: 'hobbies/rope_access.mp4' },
+    {
+      name: 'Hobby 1',
+      type: 'iframe',
+      src: 'https://www.youtube.com/embed/IRKShHej7gc?autoplay=1&loop=1&playlist=IRKShHej7gc&mute=1&controls=0&showinfo=0&rel=0',
+    },
+    {
+      name: 'Hobby 2',
+      type: 'iframe',
+      src: 'https://www.youtube.com/embed/H5dvYwCJT8w?autoplay=1&loop=1&playlist=H5dvYwCJT8w&mute=1&controls=0&showinfo=0&rel=0',
+    },
+    {
+      name: 'Hobby 3',
+      type: 'iframe',
+      src: 'https://www.youtube.com/embed/WLLhkNEAweU?autoplay=1&loop=1&playlist=WLLhkNEAweU&mute=1&controls=0&showinfo=0&rel=0',
+    },
+    {
+      name: 'Hobby 4',
+      type: 'iframe',
+      src: 'https://www.youtube.com/embed/wGIUQn0syvE?autoplay=1&loop=1&playlist=wGIUQn0syvE&mute=1&controls=0&showinfo=0&rel=0',
+    },
   ];
 
   const content = {
     en: {
-      title: 'Hobbies',
+      title: 'Other things that I do...',
       hobbies: commonHobbies,
     },
     zh: {
-      title: '興趣',
+      title: '我的其他興趣...',
       hobbies: commonHobbies,
     },
   };
@@ -30,26 +46,37 @@ export default function Hobby({ language }) {
           >
             <div className="absolute inset-0 flex items-center justify-center p-5">
               {hobby.type === 'video' && (
-                <video 
-                  controls 
-                  autoPlay 
-                  loop 
+                <video
+                  controls
+                  autoPlay
+                  loop
                   muted
-                  className="absolute inset-0 w-full h-full object-cover rounded-lg"
+                  className="absolute inset-0 w-full h-full object-cover"
                 >
                   <source src={hobby.src} type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
               )}
               {hobby.type === 'photo' && (
-                <img 
-                  src={hobby.src} 
-                  alt={hobby.name} 
-                  className="absolute inset-0 w-full h-full object-cover rounded-lg"
+                <img
+                  src={hobby.src}
+                  alt={hobby.name}
+                  className="absolute inset-0 w-full h-full object-cover"
                 />
               )}
               {hobby.type === 'text' && (
-                <h2 className="text-xl font-semibold text-center">{hobby.name}</h2>
+                <h2 className="text-xl font-semibold text-center">{hobby.content}</h2>
+              )}
+              {hobby.type === 'iframe' && (
+                <div className="video-responsive">
+                  <iframe
+                    src={hobby.src}
+                    frameBorder="0"
+                    allow="autoplay; encrypted-media"
+                    allowFullScreen
+                    className="absolute inset-0 w-full h-full object-cover"
+                  ></iframe>
+                </div>
               )}
             </div>
           </div>

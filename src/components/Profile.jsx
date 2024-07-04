@@ -31,7 +31,7 @@ export default function Profile({ language }) {
 
   return (
     <div className="">
-        <img src="/portrait.JPG" alt="Portrait" className="mt-24 mb-12 rounded-full w-64 h-64 object-cover mx-auto" />
+        <img src="/portrait.JPG" alt="Portrait" className="m-12 rounded-full w-64 h-64 object-cover mx-auto" />
         <p className="text-lg">
             {content[language].description}
         </p>
