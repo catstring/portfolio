@@ -29,8 +29,8 @@ function App() {
 
   return (
     <div className={`${darkMode ? 'dark' : ''}`}>
-      <div className={`min-h-screen bg-gray-100 dark:bg-gray-900`}>
-        <div className={`fixed-top ${showBounce ? 'bounce' : ''}`}>
+      <div className={`min-h-screen bg-gray-100 dark:bg-gray-900 ${showBounce ? 'bounce' : ''}`}>
+        <div className="fixed-top">
           <button
             onClick={toggleLanguage}
             className="w-24 p-2 text-gray-800 bg-gray-200 rounded dark:bg-gray-600 dark:text-gray-200 flex items-center justify-center"
