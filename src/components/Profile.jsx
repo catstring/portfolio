@@ -37,8 +37,7 @@ export default function Profile({ language }) {
         </p>
         <h2 className="text-2xl font-semibold mt-10">{content[language].contact}</h2>
         <div className="p-2">
-            <p>Email: <a href="mailto:toddmctsai@gmail.com" className="text-blue-500 dark:text-blue-300">toddmctsai@gmail.com</a></p>
-
+            <p>Email: <a href="mailto:toddmctsai@gmail.com" className="text-blue-500 dark:text-green-300">toddmctsai@gmail.com</a></p>
         </div>
         <div className="flex justify-between items-center mt-8 px-10 sm:px-8 md:px-20">
     <div className="text-center">

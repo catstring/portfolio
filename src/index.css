@@ -4,44 +4,54 @@
 
 @keyframes marquee {
     0% {
-      transform: translateX(0%);
+        transform: translateX(0%);
     }
     100% {
-      transform: translateX(-100%);
+        transform: translateX(-100%);
     }
-  }
-  
-  .animate-marquee {
+}
+
+.animate-marquee {
     display: flex;
     animation: marquee 90s linear infinite;
     animation-play-state: running;
-  }
-  
-  .animate-marquee:hover {
-    animation-play-state: paused;
-  }
+}
 
-  @keyframes bounce {
+.animate-marquee:hover {
+    animation-play-state: paused;
+}
+
+@keyframes bounce {
     0%, 20%, 50%, 80%, 100% {
-      transform: translateY(0);
+        transform: translateY(0);
     }
     40% {
-      transform: translateY(-10px);
+        transform: translateY(-10px);
     }
     60% {
-      transform: translateY(-5px);
+        transform: translateY(-5px);
     }
-  }
-  
-  .bounce {
-    animation: bounce 2s infinite;
-  }
+}
 
-  .project-images img {
+.bounce {
+    animation: bounce 2s infinite;
+}
+
+.project-images img {
     animation: fade 6s infinite;
-  }
-  
-  @keyframes fade {
+    -webkit-animation: fade 6s infinite; /* Safari and Chrome */
+    -moz-animation: fade 6s infinite; /* Firefox */
+    -o-animation: fade 6s infinite; /* Opera */
+    -ms-animation: fade 6s infinite; /* IE10+ */
+    }
+
+@keyframes fade {
     0%, 100% { opacity: 0; }
     15%, 50% { opacity: 1; }
+}
+@media (max-width: 768px) {
+    .project-images img {
+      animation: fade 6s infinite;
+    }
   }
+

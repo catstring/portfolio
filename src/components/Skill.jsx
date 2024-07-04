@@ -70,12 +70,12 @@ export default function Skill({ language }) {
           {content[language].categories.map((skill, index) => (
             <div
               key={index}
-              className="p-5 bg-white dark:bg-gray-700 text-black dark:text-white rounded-lg shadow-md transform transition-transform duration-300 hover:scale-105"
+              className="p-5 bg-white dark:bg-gray-700 text-black dark:text-white rounded-lg shadow-md transform transition-transform duration-300 hover:scale-105 flex flex-col"
             >
               <h2 className="font-semibold mb-2">{skill.category}</h2>
-              <ul className="text-sm list-disc pl-5">
+              <ul className="text-sm list-disc pl-5 flex flex-wrap">
                 {skill.items.map((item, idx) => (
-                  <li key={idx} className="mb-1">{item}</li>
+                  <li key={idx} className="mb-1 w-full">{item}</li>
                 ))}
               </ul>
             </div>
@@ -84,4 +84,3 @@ export default function Skill({ language }) {
       </div>
     );
   }
-  

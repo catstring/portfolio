@@ -66,7 +66,7 @@ export default function Project({ language }) {
         }
       });
     }, 3000);
-
+  
     return () => clearInterval(interval);
   }, []);
 
