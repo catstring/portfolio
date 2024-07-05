@@ -2,7 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-@keyframes marquee {
+/* Hobby Card Rotation */
+
+/* @keyframes marquee {
     0% {
         transform: translateX(0%);
     }
@@ -19,7 +21,9 @@
 
 .animate-marquee:hover {
     animation-play-state: paused;
-}
+} */
+
+/* Bounce Effect */
 
 @keyframes bounce {
     0%, 20%, 50%, 80%, 100% {
@@ -36,6 +40,8 @@
 .bounce {
     animation: bounce 2s infinite;
 }
+
+/* Project Slideshow Transition */
 
 .project-images img {
     animation: fade 6s infinite;
@@ -55,6 +61,8 @@
     }
   }
 
+/* Toggles on top */
+
   .fixed-top {
     position: fixed;
     top: 10px; /* Adjust the value as needed */
@@ -63,4 +71,17 @@
     z-index: 1000;
     display: flex;
     gap: 10px;
+  }
+
+/* Specific styles for mobile screens */
+
+@media (max-width: 768px) {
+    .video-responsive {
+      padding-bottom: 100%; /* Adjust for a square aspect ratio on smaller screens */
+    }
+  
+    .video-responsive iframe,
+    .video-responsive video {
+      object-fit: fill; /* Ensure the video fills the container */
+    }
   }
