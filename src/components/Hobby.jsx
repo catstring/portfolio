@@ -3,27 +3,27 @@
 export default function Hobby({ language }) {
   const commonHobbies = [
     {
-      name: 'Hobby 3',
+      name: 'Filming and editing',
       type: 'iframe',
-      src: 'https://www.youtube.com/embed/ZJqhXL6-s-E?autoplay=1&loop=1&playlist=ZJqhXL6-s-E&mute=1&controls=0&showinfo=0&rel=0',
+      src: 'https://www.youtube.com/embed/DtBr72nY710?autoplay=1&loop=1&playlist=DtBr72nY710&mute=1&controls=0&showinfo=0&rel=0',
     },
     {
-      name: 'Hobby 4',
+      name: 'Blender 3D modeling',
       type: 'iframe',
       src: 'https://www.youtube.com/embed/beLQiCADOmA?autoplay=1&loop=1&playlist=beLQiCADOmA&mute=1&controls=0&showinfo=0&rel=0',
     },
     {
-      name: 'Hobby 1',
+      name: 'Having fun on rope',  
       type: 'iframe',
       src: 'https://www.youtube.com/embed/Rqyad_eLrQI?autoplay=1&loop=1&playlist=Rqyad_eLrQI&mute=1&controls=0&showinfo=0&rel=0',
     },
     {
-      name: 'Hobby 5',
+      name: 'Snowboarding on a powdery day',
       type: 'iframe',
       src: 'https://www.youtube.com/embed/sEZEexyp0LE?autoplay=1&loop=1&playlist=sEZEexyp0LE&mute=1&controls=0&showinfo=0&rel=0',
     },
     {
-      name: 'Hobby 2',
+      name: 'Solo traveling in Philippines',
       type: 'iframe',
       src: 'https://www.youtube.com/embed/OFZaQ0owrWA?autoplay=1&loop=1&playlist=OFZaQ0owrWA&mute=1&controls=0&showinfo=0&rel=0',
     },

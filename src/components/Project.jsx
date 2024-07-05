@@ -90,7 +90,7 @@ export default function Project({ language }) {
                 e.preventDefault();
                 handleExpand(index);
               }}
-              className="relative pb-[56.25%] text-black dark:text-white block group transform transition-transform duration-300 hover:scale-105 transition-all"
+              className="mt-10 relative pb-[56.25%] text-black dark:text-white block group transform transition-transform duration-300 hover:scale-105 transition-all"
             >
               <div className="absolute inset-0 project-images">
                 {project.images.map((image, imgIndex) => (
