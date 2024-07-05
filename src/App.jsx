@@ -32,25 +32,25 @@ function App() {
         <div className="fixed-top">
           <button
             onClick={toggleLanguage}
-            className="w-24 p-2 text-gray-800 bg-gray-200 rounded dark:bg-gray-600 dark:text-gray-200 flex items-center justify-center transition-all duration-300"
+            className="w-24 p-2 text-gray-800 bg-gray-200 rounded dark:bg-gray-600 dark:text-gray-200 flex items-center justify-center "
           >
             <i className="fa-solid fa-language mr-2"></i>
             {language === 'en' ? '中文' : 'English'}
           </button>
           <button
             onClick={toggleDarkMode}
-            className="w-24 p-2 text-gray-800 bg-gray-200 rounded dark:bg-gray-600 dark:text-gray-200 flex items-center justify-center transition-all duration-300"
+            className="w-24 p-2 text-gray-800 bg-gray-200 rounded dark:bg-gray-600 dark:text-gray-200 flex items-center justify-center "
           >
             {darkMode ? (
-              <i className="fa-solid fa-lightbulb mr-2 transition-all duration-300"></i>
+              <i className="fa-solid fa-lightbulb mr-2 "></i>
             ) : (
-              <i className="fa-regular fa-lightbulb mr-2 transition-all duration-300"></i>
+              <i className="fa-regular fa-lightbulb mr-2 "></i>
             )}
             {darkMode ? 'Light' : 'Dark'}
           </button>
         </div>
-        <div className="p-5 max-w-2xl mx-auto pt-20 transition-all duration-300"> {/* Add padding to top to prevent content overlap */}
-          <div className="text-black dark:text-white transition-all duration-300">
+        <div className="p-5 max-w-2xl mx-auto pt-20 "> {/* Add padding to top to prevent content overlap */}
+          <div className="text-black dark:text-white ">
             <Profile language={language} />
             <Skill language={language} />
             <Project language={language} />

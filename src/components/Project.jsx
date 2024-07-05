@@ -140,7 +140,7 @@ export default function Project({ language }) {
               <>
                 <div className="fixed inset-0 bg-black bg-opacity-50 z-40"></div>
                 <div className="fixed inset-0 flex items-center justify-center z-50 ">
-                  <div className="relative w-4/5 h-4/5 bg-white dark:bg-gray-700 p-5 rounded-lg shadow-lg overflow-y-auto transition-all duration-300 ease-in-out">
+                  <div className="relative w-4/5 h-4/5 bg-white dark:bg-gray-700 p-5 rounded-lg shadow-lg overflow-y-auto">
                   <button
                     onClick={() => setExpandedProject(null)}
                     className="absolute top-2 right-2 text-white flex items-center justify-center"
