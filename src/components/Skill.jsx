@@ -33,7 +33,7 @@ export default function Skill({ language }) {
         ],
       },
       zh: {
-        title: '核心技能',
+        title: '核心技術',
         categories: [
           {
             category: '語言',

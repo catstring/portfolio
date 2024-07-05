@@ -10,7 +10,9 @@ export default function Profile({ language }) {
         <span className="block text-transparent bg-clip-text bg-gradient-to-r from-green-400 via-blue-500 to-purple-600 font-bold text-6xl p-5 mb-5">
             Todd Tsai
         </span> 
-            I'm a backend web developer based in Taiwan. My goal is to become a versatile and efficient software engineer, and provide valuable assistance in various areas of development. If you're looking to hire a junior developer, please get in touch!
+            I'm a backend web developer based in Taiwan. My goal is to become a versatile and efficient software engineer, and provide valuable assistance in various areas of development. If you're looking to hire a 
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-500 p-2">junior</span> 
+            developer, please get in touch!
         </>
       ),
       contact: 'Contact',
@@ -19,10 +21,12 @@ export default function Profile({ language }) {
       description: (
         <>
             你好！我的名字是
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-green-400 via-blue-500 to-purple-600 font-bold text-6xl p-5 mb-5 tracking-widest">
+            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-green-400 via-blue-500 to-purple-400 font-bold text-6xl p-5 mb-5 tracking-widest">
                 蔡明澄
             </span>
-            我是來自新北市的後端網頁工程師。我的目標是成為一名靈活且高效的軟體工程師，能夠在各個領域提供幫助。如果你正在尋找 junior 網頁工程師，請與我聯繫！
+            我是來自新北市的後端網頁工程師。我的目標是成為一名靈活且高效的軟體工程師，能夠在各個領域提供幫助。如果你正在尋找 
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-400 p-2">junior</span> 
+            網頁工程師，請與我聯繫！
         </>
       ),
       contact: '聯絡方式',
@@ -37,7 +41,7 @@ export default function Profile({ language }) {
         </p>
         <h2 className="text-2xl font-semibold mt-10">{content[language].contact}</h2>
         <div className="p-2">
-            <p>Email: <a href="mailto:toddmctsai@gmail.com" className="text-blue-500 dark:text-green-300">toddmctsai@gmail.com</a></p>
+            <p>Email: <a href="mailto:toddmctsai@gmail.com" className="text-blue-500 dark:text-blue-300">toddmctsai@gmail.com</a></p>
         </div>
         <div className="flex justify-between items-center mt-8 px-10 sm:px-8 md:px-20">
     <div className="text-center">
