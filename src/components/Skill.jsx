@@ -24,7 +24,7 @@ export default function Skill({ language }) {
           },
           {
             category: 'Database',
-            items: ['SQL', 'MongoDB'],
+            items: ['MySQL/ MariaDB', 'MongoDB'],
           },
           {
             category: 'DevOps',
@@ -53,7 +53,7 @@ export default function Skill({ language }) {
           },
           {
             category: '資料庫',
-            items: ['SQL', 'MongoDB'],
+            items: ['MySQL/ MariaDB', 'MongoDB'],
           },
           {
             category: 'DevOps',
