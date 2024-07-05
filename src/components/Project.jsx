@@ -43,14 +43,14 @@ export default function Project({ language }) {
 
   const content = {
     en: {
-      title: 'Projects',
+      title: 'Web Dev Portfolio',
       projects: commonProjects.map(project => ({
         ...project,
         description: project.description.en
       })),
     },
     zh: {
-      title: '專案',
+      title: '專案作品集',
       projects: commonProjects.map(project => ({
         ...project,
         description: project.description.zh
@@ -77,7 +77,7 @@ export default function Project({ language }) {
   };
 
   return (
-    <div className={`p-5 ${expandedProject !== null ? 'overflow-hidden' : ''} transition-all`}>
+    <div className={`mt-20 p-5 ${expandedProject !== null ? 'overflow-hidden' : ''} transition-all`}>
       <h1 className="text-3xl font-bold mb-6 transition-all">{content[language].title}</h1>
       <div className="grid grid-cols-1 gap-4 transition-all">
         {content[language].projects.map((project, index) => (

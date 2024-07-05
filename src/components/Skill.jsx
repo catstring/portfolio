@@ -4,7 +4,7 @@
 export default function Skill({ language }) {
     const content = {
       en: {
-        title: 'Skills',
+        title: 'Tech Stack',
         categories: [
           {
             category: 'Language',
@@ -33,7 +33,7 @@ export default function Skill({ language }) {
         ],
       },
       zh: {
-        title: '技能',
+        title: '核心技能',
         categories: [
           {
             category: '語言',
@@ -64,7 +64,7 @@ export default function Skill({ language }) {
     };
   
     return (
-      <div className="p-5 mt-8">
+      <div className="p-5 mt-20">
         <h1 className="text-3xl font-bold mb-6">{content[language].title}</h1>
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
           {content[language].categories.map((skill, index) => (

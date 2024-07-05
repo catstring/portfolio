@@ -3,40 +3,45 @@
 export default function Hobby({ language }) {
   const commonHobbies = [
     {
-      name: 'Hobby 1',
-      type: 'iframe',
-      src: 'https://www.youtube.com/embed/IRKShHej7gc?autoplay=1&loop=1&playlist=IRKShHej7gc&mute=1&controls=0&showinfo=0&rel=0',
-    },
-    {
-      name: 'Hobby 2',
-      type: 'iframe',
-      src: 'https://www.youtube.com/embed/H5dvYwCJT8w?autoplay=1&loop=1&playlist=H5dvYwCJT8w&mute=1&controls=0&showinfo=0&rel=0',
-    },
-    {
       name: 'Hobby 3',
       type: 'iframe',
-      src: 'https://www.youtube.com/embed/WLLhkNEAweU?autoplay=1&loop=1&playlist=WLLhkNEAweU&mute=1&controls=0&showinfo=0&rel=0',
+      src: 'https://www.youtube.com/embed/ZJqhXL6-s-E?autoplay=1&loop=1&playlist=ZJqhXL6-s-E&mute=1&controls=0&showinfo=0&rel=0',
     },
     {
       name: 'Hobby 4',
       type: 'iframe',
-      src: 'https://www.youtube.com/embed/wGIUQn0syvE?autoplay=1&loop=1&playlist=wGIUQn0syvE&mute=1&controls=0&showinfo=0&rel=0',
+      src: 'https://www.youtube.com/embed/beLQiCADOmA?autoplay=1&loop=1&playlist=beLQiCADOmA&mute=1&controls=0&showinfo=0&rel=0',
+    },
+    {
+      name: 'Hobby 1',
+      type: 'iframe',
+      src: 'https://www.youtube.com/embed/Rqyad_eLrQI?autoplay=1&loop=1&playlist=Rqyad_eLrQI&mute=1&controls=0&showinfo=0&rel=0',
+    },
+    {
+      name: 'Hobby 5',
+      type: 'iframe',
+      src: 'https://www.youtube.com/embed/sEZEexyp0LE?autoplay=1&loop=1&playlist=sEZEexyp0LE&mute=1&controls=0&showinfo=0&rel=0',
+    },
+    {
+      name: 'Hobby 2',
+      type: 'iframe',
+      src: 'https://www.youtube.com/embed/OFZaQ0owrWA?autoplay=1&loop=1&playlist=OFZaQ0owrWA&mute=1&controls=0&showinfo=0&rel=0',
     },
   ];
 
   const content = {
     en: {
-      title: 'Other things that I do...',
+      title: 'Life in Motion',
       hobbies: commonHobbies,
     },
     zh: {
-      title: '我的其他興趣...',
+      title: '生活剪影',
       hobbies: commonHobbies,
     },
   };
 
   return (
-    <div className="p-5">
+    <div className="p-5 mt-20">
       <h1 className="text-3xl font-bold mb-6">{content[language].title}</h1>
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4">
         {content[language].hobbies.map((hobby, index) => (
