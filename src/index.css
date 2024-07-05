@@ -54,9 +54,9 @@
 /* Expanded Cancel Button on top right corner */
 
   .x-fixed-top {
-    position: absolute;
-    top: 10px; 
-    right: 10px;
+    position: fixed;
+    top: 10.5%; 
+    right: 11.5%;
     z-index: 1000;
   }
 
