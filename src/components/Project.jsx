@@ -114,7 +114,7 @@ export default function Project({ language }) {
       <div className="grid grid-cols-1 gap-4">
         {content[language].projects.map((project, index) => (
           <div key={index} className={`relative ${expandedProject === index ? 'z-50' : ''}`}>
-            <span className="ml-8 text-xl">• {project.name}</span>
+            <span className="ml-3 md:ml-8 text-xl">• {project.name}</span>
             <a
               href={project.link}
               target="_blank"
