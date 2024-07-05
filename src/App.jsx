@@ -49,7 +49,7 @@ function App() {
             {darkMode ? 'Light' : 'Dark'}
           </button>
         </div>
-        <div className="p-5 max-w-2xl mx-auto pt-20 "> {/* Add padding to top to prevent content overlap */}
+        <div className="p-5 max-w-2xl mx-auto pt-20 ">
           <div className="text-black dark:text-white ">
             <Profile language={language} />
             <Skill language={language} />
