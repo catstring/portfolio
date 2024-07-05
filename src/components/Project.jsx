@@ -146,7 +146,7 @@ export default function Project({ language }) {
                   >
                     <i className="fa-solid fa-circle-xmark text-2xl text-red-400"></i>
                   </button>
-                    <h2 className="text-xl font-bold mb-4 transition-all">{project.name}</h2>
+                    <h2 className="text-xl font-bold mt-4 mb-6 transition-all">{project.name}</h2>
                     <span>{language === 'en' ? 'Tech Stack:' : '使用技術:'}</span><p className="mb-4 transition-all">{project.tech.join(', ')}</p>
                     <a href={project.link} target="_blank" rel="noopener noreferrer" className="text-blue-500 dark:text-blue-300 block transition-all">
                       {language === 'en' ? 'View Project' : '查看專案'}
