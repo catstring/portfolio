@@ -78,7 +78,7 @@ export default function Hobby({ language }) {
             key={index}
             className="relative pb-1/1 bg-white dark:bg-gray-800 text-black dark:text-white rounded-lg shadow-md transform transition-transform duration-300 hover:scale-105 overflow-hidden"
           >
-            <div className="absolute inset-0 flex items-center justify-center p-5">
+            <div className="absolute inset-0 flex items-center justify-center">
               {hobby.type === 'video' && (
                 <video
                   controls
