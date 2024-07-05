@@ -140,13 +140,13 @@ export default function Project({ language }) {
                 <div className="fixed inset-0 bg-black bg-opacity-50 z-40 transition-all"></div>
                 <div className="fixed inset-0 flex items-center justify-center z-50 transition-all">
                   <div className="relative w-4/5 h-4/5 bg-white dark:bg-gray-700 p-5 rounded-lg shadow-lg overflow-y-auto transition-all duration-300 ease-in-out">
-                    <button
-                      onClick={() => setExpandedProject(null)}
-                      className="absolute top-2 right-2 bg-red-500 text-white px-2 py-1 rounded flex items-center justify-center transition-all"
-                    >
-                      {language === 'en' ? 'Close' : '關閉'}
-                    </button>
-                    <h2 className="text-2xl font-bold mb-4 transition-all">{project.name}</h2>
+                  <button
+                    onClick={() => setExpandedProject(null)}
+                    className="absolute top-2 right-2 text-white flex items-center justify-center transition-all"
+                  >
+                    <i className="fa-solid fa-circle-xmark text-2xl text-red-400"></i>
+                  </button>
+                    <h2 className="text-xl font-bold mb-4 transition-all">{project.name}</h2>
                     <span>{language === 'en' ? 'Tech Stack:' : '使用技術:'}</span><p className="mb-4 transition-all">{project.tech.join(', ')}</p>
                     <a href={project.link} target="_blank" rel="noopener noreferrer" className="text-blue-500 dark:text-blue-300 block transition-all">
                       {language === 'en' ? 'View Project' : '查看專案'}
