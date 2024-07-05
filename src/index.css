@@ -65,7 +65,7 @@
 
   .fixed-top {
     position: fixed;
-    top: 10px; /* Adjust the value as needed */
+    top: 10px; 
     left: 50%;
     transform: translateX(-50%);
     z-index: 1000;
@@ -77,11 +77,11 @@
 
 @media (max-width: 768px) {
     .video-responsive {
-      padding-bottom: 100%; /* Adjust for a square aspect ratio on smaller screens */
+      padding-bottom: 100%;
     }
   
     .video-responsive iframe,
     .video-responsive video {
-      object-fit: fill; /* Ensure the video fills the container */
+      object-fit: fill;
     }
   }

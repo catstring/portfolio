@@ -10,9 +10,9 @@ export default function Profile({ language }) {
         <span className="block text-transparent bg-clip-text bg-gradient-to-r from-green-400 via-blue-500 to-purple-600 font-bold text-6xl p-5 mb-5">
             Todd Tsai
         </span> 
-            I'm a backend web developer based in Taiwan. My goal is to become a versatile and efficient software engineer, and provide valuable assistance in various areas of development. If you're looking to hire a 
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-500 p-2">junior</span> 
-            developer, please get in touch!
+        I'm a backend web developer based in Taiwan. My goal is to become a versatile and efficient software engineer, and provide valuable assistance in various areas of development. If you're looking to hire a 
+        <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-500 font-bold p-2">junior</span> 
+        developer, please get in touch!
         </>
       ),
       contact: 'Contact',
@@ -25,7 +25,7 @@ export default function Profile({ language }) {
                 蔡明澄
             </span>
             我是來自新北市的後端網頁工程師。我的目標是成為一名靈活且高效的軟體工程師，能夠在各個領域提供幫助。如果你正在尋找 
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-400 p-2">junior</span> 
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-400 font-bold p-2">junior</span> 
             網頁工程師，請與我聯繫！
         </>
       ),
