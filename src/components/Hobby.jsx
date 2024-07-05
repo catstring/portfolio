@@ -27,6 +27,11 @@ export default function Hobby({ language }) {
       type: 'iframe',
       src: 'https://www.youtube.com/embed/OFZaQ0owrWA?autoplay=1&loop=1&playlist=OFZaQ0owrWA&mute=1&controls=0&showinfo=0&rel=0',
     },
+    {
+      name: '3D physic in Unity',
+      type: 'iframe',
+      src: 'https://www.youtube.com/embed/eRFOnM11nt0?autoplay=1&loop=1&loop=1&playlist=eRFOnM11nt0&mute=1&controls=0&showinfo=0&rel=0',
+    },
   ];
 
   const content = {
@@ -35,7 +40,7 @@ export default function Hobby({ language }) {
       hobbies: commonHobbies,
     },
     zh: {
-      title: '生活剪影',
+      title: '生活軌跡',
       hobbies: commonHobbies,
     },
   };
