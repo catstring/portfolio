@@ -51,6 +51,15 @@
     gap: 10px;
   }
 
+/* Expanded Cancel Button on top right corner */
+
+  .x-fixed-top {
+    position: absolute;
+    top: 10px; 
+    right: 10px;
+    z-index: 1000;
+  }
+
 /* Specific styles for mobile screens */
 
 @media (max-width: 768px) {
