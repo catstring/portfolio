@@ -43,7 +43,7 @@ export default function Hobby({ language }) {
       type: 'iframe',
       src: 'https://www.youtube.com/embed/OFZaQ0owrWA?autoplay=1&loop=1&playlist=OFZaQ0owrWA&mute=1&controls=0&showinfo=0&rel=0',
       description: {
-        en: 'Experience the beauty and culture of the Philippines through solo travel.',
+        en: 'Experience the beauty and culture of the Philippines.',
         zh: '通過獨自旅行體驗菲律賓的美麗和文化。',
       },
     },
