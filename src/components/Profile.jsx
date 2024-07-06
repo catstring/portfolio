@@ -43,7 +43,7 @@ export default function Profile({ language }) {
     <div className="">
         <div className="relative m-12 w-64 h-64 mx-auto rounded-full overflow-hidden">
             <img
-                src="/portrait-low-res.JPG"
+                src="/portrait-low.jpg"
                 alt="Portrait Low Resolution"
                 className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${isHighResImageLoaded ? 'opacity-0' : 'opacity-100'}`}
             />
