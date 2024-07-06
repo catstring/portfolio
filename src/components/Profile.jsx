@@ -1,7 +1,9 @@
 /* eslint-disable react/prop-types */
-// import React from 'react';
+import { useState } from 'react';
 
 export default function Profile({ language }) {
+  const [isHighResImageLoaded, setIsHighResImageLoaded] = useState(false);
+
   const content = {
     en: {
       description: (
@@ -33,9 +35,25 @@ export default function Profile({ language }) {
     }
   };
 
+  const handleHighResImageLoad = () => {
+    setIsHighResImageLoaded(true);
+  };
+
   return (
     <div className="">
-        <img src="/portrait.JPG" alt="Portrait" className="m-12 rounded-full w-64 h-64 object-cover mx-auto" />
+        <div className="relative m-12 w-64 h-64 mx-auto rounded-full overflow-hidden">
+            <img
+                src="/portrait-low-res.JPG"
+                alt="Portrait Low Resolution"
+                className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${isHighResImageLoaded ? 'opacity-0' : 'opacity-100'}`}
+            />
+            <img
+                src="/portrait.JPG"
+                alt="Portrait High Resolution"
+                className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${isHighResImageLoaded ? 'opacity-100' : 'opacity-0'}`}
+                onLoad={handleHighResImageLoad}
+            />
+        </div>
         <p className="text-lg">
             {content[language].description}
         </p>
@@ -44,26 +62,25 @@ export default function Profile({ language }) {
             <p>Email: <a href="mailto:toddmctsai@gmail.com" className="text-blue-500 dark:text-blue-300">toddmctsai@gmail.com</a></p>
         </div>
         <div className="flex justify-between items-center mt-8 px-10 sm:px-8 md:px-20">
-    <div className="text-center">
-        <a href="https://www.linkedin.com/in/ming-cheng-tsai-4821862b4" target="_blank" rel="noopener noreferrer">
-            <img src="/icons8-linkedin-500.png" alt="LinkedIn" className="w-12 h-12 object-cover mx-auto" />
-        </a>
-        <p className="mt-2 text-sm text-[#878787]">LinkedIn</p>
-    </div>
-    <div className="text-center">
-        <a href="https://github.com/catstring" target="_blank" rel="noopener noreferrer">
-            <img src="/icons8-github-96.png" alt="GitHub" className="w-12 h-12 object-cover mx-auto" />
-        </a>
-        <p className="mt-2 text-sm text-[#878787]">GitHub</p>
-    </div>
-    <div className="text-center">
-        <a href="https://leetcode.com/u/totallytoddy/" target="_blank" rel="noopener noreferrer">
-            <img src="/icons8-leetcode-96.png" alt="LeetCode" className="w-12 h-12 object-cover mx-auto" />
-        </a>
-        <p className="mt-2 text-sm text-[#878787]">LeetCode</p>
-    </div>
-</div>
-
+          <div className="text-center">
+            <a href="https://www.linkedin.com/in/ming-cheng-tsai-4821862b4" target="_blank" rel="noopener noreferrer">
+              <img src="/icons8-linkedin-500.png" alt="LinkedIn" className="w-12 h-12 object-cover mx-auto" />
+            </a>
+            <p className="mt-2 text-sm text-[#878787]">LinkedIn</p>
+          </div>
+          <div className="text-center">
+            <a href="https://github.com/catstring" target="_blank" rel="noopener noreferrer">
+              <img src="/icons8-github-96.png" alt="GitHub" className="w-12 h-12 object-cover mx-auto" />
+            </a>
+            <p className="mt-2 text-sm text-[#878787]">GitHub</p>
+          </div>
+          <div className="text-center">
+            <a href="https://leetcode.com/u/totallytoddy/" target="_blank" rel="noopener noreferrer">
+              <img src="/icons8-leetcode-96.png" alt="LeetCode" className="w-12 h-12 object-cover mx-auto" />
+            </a>
+            <p className="mt-2 text-sm text-[#878787]">LeetCode</p>
+          </div>
+        </div>
     </div>
   );
 }
