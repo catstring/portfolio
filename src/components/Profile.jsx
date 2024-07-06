@@ -1,8 +1,8 @@
-/* eslint-disable react/prop-types */
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 
 export default function Profile({ language }) {
   const [isHighResImageLoaded, setIsHighResImageLoaded] = useState(false);
+  const highResImageRef = useRef();
 
   const content = {
     en: {
@@ -39,6 +39,12 @@ export default function Profile({ language }) {
     setIsHighResImageLoaded(true);
   };
 
+  useEffect(() => {
+    if (highResImageRef.current && highResImageRef.current.complete) {
+      setIsHighResImageLoaded(true);
+    }
+  }, []);
+
   return (
     <div className="">
         <div className="relative m-12 w-64 h-64 mx-auto rounded-full overflow-hidden">
@@ -48,6 +54,7 @@ export default function Profile({ language }) {
                 className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${isHighResImageLoaded ? 'opacity-0' : 'opacity-100'}`}
             />
             <img
+                ref={highResImageRef}
                 src="/portrait.JPG"
                 alt="Portrait High Resolution"
                 className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${isHighResImageLoaded ? 'opacity-100' : 'opacity-0'}`}
