@@ -4,7 +4,17 @@ import Skill from './components/Skill';
 import Project from './components/Project';
 import Hobby from './components/Hobby';
 import '@fortawesome/fontawesome-free/css/all.min.css';
-import './App.css'; // Ensure you have the necessary Tailwind CSS import here
+import './App.css';
+
+const ToggleButton = ({ onClick, isActive, activeIcon, inactiveIcon, activeText, inactiveText }) => (
+  <button
+    onClick={onClick}
+    className="w-24 p-2 text-gray-800 bg-gray-200 rounded dark:bg-gray-600 dark:text-gray-200 flex items-center justify-center"
+  >
+    <i className={`fa ${isActive ? activeIcon : inactiveIcon} mr-2`}></i>
+    {isActive ? activeText : inactiveText}
+  </button>
+);
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -12,11 +22,11 @@ function App() {
   const [showBounce, setShowBounce] = useState(true);
 
   const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
+    setDarkMode(prevMode => !prevMode);
   };
 
   const toggleLanguage = () => {
-    setLanguage(language === 'en' ? 'zh' : 'en');
+    setLanguage(prevLanguage => (prevLanguage === 'en' ? 'zh' : 'en'));
   };
 
   useEffect(() => {
@@ -29,28 +39,26 @@ function App() {
   return (
     <div className={`${darkMode ? 'dark' : ''}`}>
       <div className={`min-h-screen bg-gray-100 dark:bg-gray-900 ${showBounce ? 'animate-bounce' : ''} transition-all duration-300`}>
-        <div className="fixed-top">
-          <button
+        <div className="fixed-top flex space-x-2 p-2">
+          <ToggleButton
             onClick={toggleLanguage}
-            className="w-24 p-2 text-gray-800 bg-gray-200 rounded dark:bg-gray-600 dark:text-gray-200 flex items-center justify-center "
-          >
-            <i className="fa-solid fa-language mr-2"></i>
-            {language === 'en' ? '中文' : 'English'}
-          </button>
-          <button
+            isActive={language === 'en'}
+            activeIcon="fa-solid fa-language"
+            inactiveIcon="fa-solid fa-language"
+            activeText="中文"
+            inactiveText="English"
+          />
+          <ToggleButton
             onClick={toggleDarkMode}
-            className="w-24 p-2 text-gray-800 bg-gray-200 rounded dark:bg-gray-600 dark:text-gray-200 flex items-center justify-center "
-          >
-            {darkMode ? (
-              <i className="fa-solid fa-lightbulb mr-2 "></i>
-            ) : (
-              <i className="fa-regular fa-lightbulb mr-2 "></i>
-            )}
-            {darkMode ? 'Light' : 'Dark'}
-          </button>
+            isActive={darkMode}
+            activeIcon="fa-solid fa-lightbulb"
+            inactiveIcon="fa-regular fa-lightbulb"
+            activeText="Light"
+            inactiveText="Dark"
+          />
         </div>
-        <div className="p-5 max-w-2xl mx-auto pt-20 ">
-          <div className="text-black dark:text-white ">
+        <div className="p-5 max-w-2xl mx-auto pt-20">
+          <div className="text-black dark:text-white">
             <Profile language={language} />
             <Skill language={language} />
             <Project language={language} />

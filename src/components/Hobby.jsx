@@ -1,7 +1,29 @@
 /* eslint-disable react/prop-types */
+import { useMemo } from 'react';
+
+const HobbyCard = ({ hobby, language }) => (
+  <div className="relative pb-1/1 bg-white dark:bg-gray-800 text-black dark:text-white rounded-lg shadow-md transform transition-transform duration-300 hover:scale-105 overflow-hidden">
+    <div className="absolute inset-0 flex items-center justify-center">
+      {hobby.type === 'iframe' && (
+        <div className="video-responsive">
+          <iframe
+            src={hobby.src}
+            allow="autoplay; encrypted-media"
+            allowFullScreen
+            className="absolute inset-0 w-full h-full object-cover"
+            title={hobby.name}
+          ></iframe>
+        </div>
+      )}
+    </div>
+    <div className="absolute inset-0 flex items-center justify-center p-5 bg-black bg-opacity-50 opacity-0 hover:opacity-100 transition-opacity duration-300">
+      <p className="text-white text-center">{hobby.description[language]}</p>
+    </div>
+  </div>
+);
 
 export default function Hobby({ language }) {
-  const commonHobbies = [
+  const commonHobbies = useMemo(() => [
     {
       name: 'Filming and editing',
       type: 'iframe',
@@ -56,9 +78,9 @@ export default function Hobby({ language }) {
         zh: '使用Unity探索3D物理模擬的世界。',
       },
     },
-  ];
+  ], []);
 
-  const content = {
+  const content = useMemo(() => ({
     en: {
       title: 'Life in Motion',
       hobbies: commonHobbies,
@@ -67,55 +89,14 @@ export default function Hobby({ language }) {
       title: '生活軌跡',
       hobbies: commonHobbies,
     },
-  };
+  }), [commonHobbies]);
 
   return (
     <div className="p-5 mt-20">
       <h1 className="text-3xl font-bold mb-6">{content[language].title}</h1>
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4">
         {content[language].hobbies.map((hobby, index) => (
-          <div
-            key={index}
-            className="relative pb-1/1 bg-white dark:bg-gray-800 text-black dark:text-white rounded-lg shadow-md transform transition-transform duration-300 hover:scale-105 overflow-hidden"
-          >
-            <div className="absolute inset-0 flex items-center justify-center">
-              {hobby.type === 'video' && (
-                <video
-                  controls
-                  autoPlay
-                  loop
-                  muted
-                  className="absolute inset-0 w-full h-full object-cover"
-                >
-                  <source src={hobby.src} type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
-              )}
-              {hobby.type === 'photo' && (
-                <img
-                  src={hobby.src}
-                  alt={hobby.name}
-                  className="absolute inset-0 w-full h-full object-cover"
-                />
-              )}
-              {hobby.type === 'text' && (
-                <h2 className="text-xl font-semibold text-center">{hobby.content}</h2>
-              )}
-              {hobby.type === 'iframe' && (
-                <div className="video-responsive">
-                  <iframe
-                    src={hobby.src}
-                    allow="autoplay; encrypted-media"
-                    allowFullScreen
-                    className="absolute inset-0 w-full h-full object-cover"
-                  ></iframe>
-                </div>
-              )}
-            </div>
-            <div className="absolute inset-0 flex items-center justify-center p-5 bg-black bg-opacity-50 opacity-0 hover:opacity-100 transition-opacity duration-300">
-              <p className="text-white text-center">{hobby.description[language]}</p>
-            </div>
-          </div>
+          <HobbyCard key={index} hobby={hobby} language={language} />
         ))}
       </div>
     </div>
