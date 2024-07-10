@@ -140,12 +140,12 @@ export default function Project({ language }) {
               <>
                 <div className="fixed inset-0 bg-black bg-opacity-50 z-40"></div>
                 <div className="fixed inset-0 flex items-center justify-center z-50 ">
-                  <div className="relative w-4/5 h-4/5 bg-white dark:bg-gray-700 p-5 rounded-lg shadow-lg overflow-y-auto">
+                  <div className="relative max-w-3xl w-full bg-white dark:bg-gray-700 p-5 rounded-lg shadow-lg overflow-y-auto">
                   <button
                     onClick={() => setExpandedProject(null)}
-                    className="absolute top-2 right-2 text-white flex items-center justify-center"
+                    className="absolute top-2 right-2 text-white flex"
                   >
-                    <i className="x-fixed-top fa-solid fa-circle-xmark text-2xl text-red-400"></i>
+                    <i className= "fa-solid fa-circle-xmark text-2xl text-red-400"></i>
                   </button>
                     <h2 className="text-xl font-bold mt-4 mb-6">{project.name}</h2>
                     <span>{language === 'en' ? 'Tech Stack:' : '使用技術:'}</span><p className="mb-4">{project.tech.join(', ')}</p>
