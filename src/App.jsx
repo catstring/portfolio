@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { useState, useEffect } from 'react';
 import Profile from './components/Profile';
 import Skill from './components/Skill';

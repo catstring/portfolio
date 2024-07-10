@@ -13,10 +13,10 @@ export default function Profile({ language }) {
           <span className="block text-transparent bg-clip-text bg-gradient-to-r from-green-400 via-blue-500 to-purple-600 font-bold text-6xl p-5 mb-5">
             Todd Tsai
           </span>
-          I'm a backend web developer based in Taiwan. My goal is to become a versatile and efficient software engineer, and provide valuable assistance in various areas of development. If you're looking to hire a
+          I&apos;m a backend web developer based in Taiwan. My goal is to become a versatile and efficient software engineer, and provide valuable assistance in various areas of development. If you&apos;re looking to hire a
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-500 font-bold p-2">junior</span>
           developer, please get in touch!
-        </>
+      </>
       ),
       contact: 'Contact',
     },
