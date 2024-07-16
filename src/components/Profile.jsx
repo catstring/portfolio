@@ -57,17 +57,17 @@ export default function Profile({ language }) {
 
   return (
     <div>
-      <div className="relative m-12 w-64 h-64 mx-auto rounded-full overflow-hidden">
+      <div className="relative m-12 w-64 h-64 mx-auto overflow-hidden">
         <img
           src="/portrait-low.jpg"
           alt="Portrait Low Resolution"
-          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${isHighResImageLoaded ? 'opacity-0' : 'opacity-100'}`}
+          className={`absolute inset-0 w-full h-full rounded-full object-cover transition-opacity duration-500 ${isHighResImageLoaded ? 'opacity-0' : 'opacity-100'}`}
         />
         <img
           ref={highResImageRef}
           src="/portrait.JPG"
           alt="Portrait High Resolution"
-          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${isHighResImageLoaded ? 'opacity-100' : 'opacity-0'}`}
+          className={`absolute inset-0 w-full h-full rounded-full object-cover transition-opacity duration-500 ${isHighResImageLoaded ? 'opacity-100' : 'opacity-0'}`}
           onLoad={handleHighResImageLoad}
         />
       </div>
