@@ -16,11 +16,11 @@ export default function Skill({ language }) {
           },
           {
             category: 'Frontend',
-            items: ['Vue.js', 'React.js'],
+            items: ['React.js', 'Vue.js'],
           },
           {
             category: 'CSS',
-            items: ['Bootstrap', 'Tailwind'],
+            items: ['Tailwind', 'Bootstrap'],
           },
           {
             category: 'Database',
@@ -29,6 +29,10 @@ export default function Skill({ language }) {
           {
             category: 'DevOps',
             items: ['GitHub', 'CI/CD', 'Docker', 'AWS/ GCP'],
+          },
+          {
+            category: 'Test',
+            items: ['Vitest', 'PHPUnit/ Pest', 'Django/ Pytest'],
           },
         ],
       },
@@ -45,11 +49,11 @@ export default function Skill({ language }) {
           },
           {
             category: '前端',
-            items: ['Vue.js', 'React.js'],
+            items: ['React.js', 'Vue.js'],
           },
           {
             category: 'CSS',
-            items: ['Bootstrap', 'Tailwind'],
+            items: ['Tailwind', 'Bootstrap'],
           },
           {
             category: '資料庫',
@@ -58,6 +62,10 @@ export default function Skill({ language }) {
           {
             category: 'DevOps',
             items: ['GitHub', 'CI/CD', 'Docker', 'AWS/ GCP'],
+          },
+          {
+            category: '測試',
+            items: ['Vitest', 'PHPUnit/ Pest', 'Django/ Pytest'],
           },
         ],
       }

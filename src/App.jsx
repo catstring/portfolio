@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Profile from './components/Profile';
 import Skill from './components/Skill';
 import Project from './components/Project';
@@ -20,7 +20,6 @@ const ToggleButton = ({ onClick, isActive, activeIcon, inactiveIcon, activeText,
 function App() {
   const [darkMode, setDarkMode] = useState(false);
   const [language, setLanguage] = useState('en');
-  const [showBounce, setShowBounce] = useState(true);
 
   const toggleDarkMode = () => {
     setDarkMode(prevMode => !prevMode);
@@ -30,16 +29,11 @@ function App() {
     setLanguage(prevLanguage => (prevLanguage === 'en' ? 'zh' : 'en'));
   };
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowBounce(false);
-    }, 2000);
-    return () => clearTimeout(timer);
-  }, []);
+
 
   return (
     <div className={`${darkMode ? 'dark' : ''}`}>
-      <div className={`min-h-screen bg-gray-100 dark:bg-gray-900 ${showBounce ? 'animate-bounce' : ''} transition-all duration-300`}>
+      <div className={`min-h-screen bg-gray-100 dark:bg-gray-900 transition-all duration-300`}>
         <div className="fixed-top flex space-x-2 p-2">
           <ToggleButton
             onClick={toggleLanguage}
