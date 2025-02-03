@@ -31,8 +31,8 @@ export default function Skill({ language }) {
             items: ['GitHub', 'CI/CD', 'Docker', 'AWS/ GCP'],
           },
           {
-            category: 'Test',
-            items: ['Vitest', 'PHPUnit/ Pest', 'Django/ Pytest'],
+            category: 'Other',
+            items: ['Unit Test', 'OOP', 'FP', 'MVC'],
           },
         ],
       },
@@ -64,8 +64,8 @@ export default function Skill({ language }) {
             items: ['GitHub', 'CI/CD', 'Docker', 'AWS/ GCP'],
           },
           {
-            category: '測試',
-            items: ['Vitest', 'PHPUnit/ Pest', 'Django/ Pytest'],
+            category: '其他',
+            items: ['Unit Test', 'OOP', 'FP', 'MVC'],
           },
         ],
       }

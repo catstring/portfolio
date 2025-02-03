@@ -38,7 +38,7 @@ export default function Project({ language }) {
         '/projects/echo/5.png',
         '/projects/echo/6.png',
       ],
-      link: 'https://echo.pfolio1.xyz/',
+      link: 'https://echo.toddmctsai.me/',
     },
     {
       name: {
