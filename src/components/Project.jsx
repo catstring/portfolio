@@ -65,7 +65,7 @@ export default function Project({ language }) {
         '/projects/toddoList/5.png',
         '/projects/toddoList/6.png'
       ],
-      link: 'https://toddolist.pfolio1.xyz/',
+      link: 'https://toddolist.toddmctsai.me/',
     },
   ];
 
